@@ -35,7 +35,5 @@ ALTER TABLE ParkingSlot ADD CONSTRAINT slot_car_fk
     FOREIGN KEY (car) REFERENCES Car(car_number);
 ALTER TABLE ParkingSlot MODIFY (
     position NOT NULL,
-    intended_type NOT NULL,
-    reserved_since NOT NULL,
-    reserved_due NOT NULL
+    intended_type NOT NULL
 );
