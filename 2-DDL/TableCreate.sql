@@ -1,6 +1,6 @@
-DROP TABLE Owner CASCADE CONSTRAINTS;
-DROP TABLE Car CASCADE CONSTRAINTS;
 DROP TABLE ParkingSlot CASCADE CONSTRAINTS;
+DROP TABLE Car CASCADE CONSTRAINTS;
+DROP TABLE Owner CASCADE CONSTRAINTS;
 
 CREATE TABLE Owner (
     id NUMBER(8), -- ідентифікатор власника
@@ -30,5 +30,5 @@ CREATE TABLE ParkingSlot (
     intended_type VARCHAR(20), -- тип транспорту, для якого призначене місце
     reserved_since DATE, -- зарезервовано з вказаної дати
     reserved_due DATE, -- зарезервовано до вказаної дати
-    car VARCHAR(10) -- припаркований автомобіль
+    car VARCHAR(15) -- припаркований автомобіль
 );
