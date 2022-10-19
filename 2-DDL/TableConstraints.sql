@@ -37,3 +37,6 @@ ALTER TABLE ParkingSlot MODIFY (
     position NOT NULL,
     intended_type NOT NULL
 );
+-- автомобіль не може бути припаркований на двох паркомісцях одночасно
+ALTER TABLE ParkingSlot ADD CONSTRAINT slot_car_unique
+    UNIQUE(car);
