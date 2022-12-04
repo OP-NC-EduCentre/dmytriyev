@@ -30,7 +30,7 @@ SELECT
     PASPORT,
     PHONE
 FROM OWNER
-WHERE REGEXP_LIKE(FIRST_NAME, '^(Пет|Іва|Гео)*');
+WHERE REGEXP_LIKE(FIRST_NAME, '^(Пет|Іва|Гео)');
 
 --FIRST_NAME|LAST_NAME|PATRONYMIC |PASPORT  |PHONE            |
 ------------+---------+-----------+---------+-----------------+
