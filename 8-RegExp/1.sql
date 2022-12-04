@@ -2,35 +2,41 @@
 -- першій позиції. Створіть запит, який отримає три рядки таблиці з урахуванням трьох букв,
 -- використовуючи оператор LIKE.
 
-SELECT 
-    ID,
-    POSITION,
-    RESERVED_DUE,
-    CAR
-FROM PARKINGSLOT
-WHERE POSITION LIKE 'Над%';
+SELECT
+    FIRST_NAME,
+    LAST_NAME,
+    PATRONYMIC,
+    PASPORT,
+    PHONE
+FROM OWNER
+WHERE FIRST_NAME LIKE 'Пет%'
+    OR FIRST_NAME LIKE 'Іва%'
+    OR FIRST_NAME  LIKE 'Гео%';
 
--- ID|POSITION|RESERVED_DUE|CAR     |
--- --+--------+------------+--------+
---  2|Надворі |  2023-02-22|АА0000АА|
--- 24|Надворі |            |        |
+-- FIRST_NAME|LAST_NAME|PATRONYMIC |PASPORT  |PHONE            |
+-- ----------+---------+-----------+---------+-----------------+
+-- Петров    |Петро    |Петрович   |КК112233 |+38(012)345-67-89|
+-- Іванов    |Іван     |           |001234567|+38(098)765-43-21|
+-- Георгієв  |Георгій  |Георгійович|КЕ12345  |+38(099)123-45-67|
 
 
 
 
 -- Повторіть завдання 1, використовуючи регулярні вирази з альтернативними варіантами.
-SELECT 
-    ID,
-    POSITION,
-    RESERVED_DUE,
-    CAR
-FROM PARKINGSLOT
-WHERE REGEXP_LIKE(POSITION, '^Над');
+SELECT
+    FIRST_NAME,
+    LAST_NAME,
+    PATRONYMIC,
+    PASPORT,
+    PHONE
+FROM OWNER
+WHERE REGEXP_LIKE(FIRST_NAME, '^(Пет|Іва|Гео)*');
 
--- ID|POSITION|RESERVED_DUE|CAR     |
--- --+--------+------------+--------+
---  2|Надворі |  2023-02-22|АА0000АА|
--- 24|Надворі |            |        |
+--FIRST_NAME|LAST_NAME|PATRONYMIC |PASPORT  |PHONE            |
+------------+---------+-----------+---------+-----------------+
+--Петров    |Петро    |Петрович   |КК112233 |+38(012)345-67-89|
+--Іванов    |Іван     |           |001234567|+38(098)765-43-21|
+--Георгієв  |Георгій  |Георгійович|КЕ12345  |+38(099)123-45-67|
 
 
 
